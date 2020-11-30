@@ -20,4 +20,5 @@ car.brand.model = "Fiesta";
 car.year = 2018;
 
 car.description();
-//Output: This is ford focus made in 2020
+//Output1: This is ford focus made in 2020
+//Output2: This is ford fiesta made in 2018

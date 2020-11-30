@@ -17,6 +17,7 @@ car.description();
 
 car.color = "Blue"; //update the color
 car.brand.model = "Fiesta";
-delete car.year;
+car.year = 2018;
 
+car.description();
 //Output: This is ford focus made in 2020

@@ -1,3 +1,4 @@
+// Day3
 // Simple class and inheritance in JS
 class Day3A {
   constructor(day) {

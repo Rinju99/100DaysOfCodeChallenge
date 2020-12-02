@@ -14,7 +14,6 @@ class Day3B extends Day3A {
     return super.days() + " and part-B combined";
   }
 }
-
 const d = new Day3B("day3");
 
 //Output: This is day3 part-1 and part-2 combined..

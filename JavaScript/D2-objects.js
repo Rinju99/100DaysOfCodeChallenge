@@ -1,3 +1,4 @@
+// Day2
 //A Simple JavaScript Object..
 const car = {
   color: "black",

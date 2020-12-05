@@ -1,4 +1,4 @@
-// Day2
+// Day-2
 //A Simple JavaScript Object..
 const car = {
   color: "black",
@@ -21,5 +21,7 @@ car.brand.model = "Fiesta";
 car.year = 2018;
 
 car.description();
+
+delete car.year;
 //Output1: This is ford focus made in 2020
 //Output2: This is ford fiesta made in 2018

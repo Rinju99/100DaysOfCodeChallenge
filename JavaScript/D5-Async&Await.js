@@ -11,6 +11,6 @@ async function doFetch() {
   }
 }
 
-myFetch()
+doFetch()
   .then((data) => console.log(data))
   .catch((e) => console.log(e)); //catches any error

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      var regEx = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}\1\d{4}/;
+      function testPhoneNumber(input) {
+        var number = regEx.exec(input.value);
+        if (!number)
+          window.alert(
+            "Sorry, "+input.value + " is not a valid phone number"
+          );
+        else window.alert("Your phone number is " + number[0]);
+      }
+    </script>
+  </head>
+  <body>
+    <div align="center">
+      <p>
+      <H3>A phone number validator!</H3>
+      Enter your phone number below<br />
+      format:xxx-xxx-xxxx
+    </p>
+    <div/>
+    <form action="#">
+      <input id="phone" /><button
+        onclick="testPhoneNumber(document.getElementById('phone'));"
+      >
+        Check
+      </button>
+    </form>
+  </body>
+</html>

@@ -171,7 +171,10 @@ print(plusOne(10)))`);
 
 run(
   `do(define(pow, fun(base, exp,
-    if(==(exp, 0),1,*(base, pow(base, -(exp, 1)))))),print(pow(2, 10)))`
+    if(==(exp, 0),
+    1,
+    *(base, pow(base, -(exp, 1)))))),
+    print(pow(2, 10)))`
 );
 run(`
 do(define(f, fun(a, fun(b, +(a, b)))),

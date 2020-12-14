@@ -8,7 +8,7 @@ function parseExpression(program) {
   } else if ((match = /^[^\s(),#"]+/.exec(program))) {
     expr = { type: "word", name: match[0] };
   } else {
-    throw new SyntaxError("Unexpected syntax: " + program);
+    throw new SyntaxError("Error: " + program);
   }
   return parseApply(expr, program.slice(match[0].length));
 }
@@ -134,17 +134,9 @@ function run(program) {
   return evaluate(parse(program), Object.create(topScope));
 }
 
-run(`
-do(define(total, 0),define(count, 1),
-  while(<(count, 11),
-  do(define(total, +(total, count)),
-  define(count, +(count, 1)))),
-  print(total))
-  `);
-
-specialForms.fun = (args, scope) => {
+specialForms.function = (args, scope) => {
   if (!args.length) {
-    throw new SyntaxError("Functions need a body");
+    throw new SyntaxError("Function body is missing");
   }
   let body = args[args.length - 1];
   let params = args.slice(0, args.length - 1).map((expr) => {
@@ -153,6 +145,7 @@ specialForms.fun = (args, scope) => {
     }
     return expr.name;
   });
+
   return function () {
     if (arguments.length != params.length) {
       throw new TypeError("Wrong number of arguments");
@@ -166,16 +159,24 @@ specialForms.fun = (args, scope) => {
 };
 
 run(`
-do(define(plusOne, fun(a, +(a, 1))),
+do(define(total, 0),define(count, 1),
+  while(<(count, 11),
+  do(define(total, +(total, count)),
+  define(count, +(count, 1)))),
+  print(total))
+  `);
+
+run(`
+do(define(plusOne, function(a, +(a, 1))),
 print(plusOne(10)))`);
 
 run(
-  `do(define(pow, fun(base, exp,
+  `do(define(pow, function(base, exp,
     if(==(exp, 0),
     1,
     *(base, pow(base, -(exp, 1)))))),
     print(pow(2, 10)))`
 );
 run(`
-do(define(f, fun(a, fun(b, +(a, b)))),
+do(define(f, function(a, function(b, +(a, b)))),
 print(f(4)(5)))`);

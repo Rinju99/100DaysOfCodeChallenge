@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #scroll {
+        position: fixed;
+        border-bottom: 3px solid olivedrab;
+        top: 0px;
+      }
+    </style>
+    <div id="scroll"></div>
+    <script>
+      document.body.appendChild(
+        document.createTextNode("100DaysOfCode ".repeat(5000))
+      );
+      window.addEventListener("scroll", () => {
+        let max = document.body.scrollHeight - innerHeight;
+        document.querySelector("#scroll").style.width = `${
+          (pageYOffset / max) * 100
+        }%`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p style="text-align: center">
+      <img src="Assets/dragon.gif" style="position: relative" />
+    </p>
+    <script>
+      let fusion = document.querySelector("img");
+      let angle = Math.PI / 4;
+      function animate(time, lastTime) {
+        if (lastTime != null) {
+          angle += (time - lastTime) * 0.001;
+        }
+        fusion.style.top = Math.sin(angle) * 200 + "px";
+        fusion.style.left = Math.cos(angle) * 20 + "px";
+        requestAnimationFrame((newTime) => animate(newTime, time));
+      }
+      requestAnimationFrame(animate);
+    </script>
+  </body>
+</html>

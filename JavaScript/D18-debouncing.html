@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      font-weight: bold;
+      text-align: center;
+      font-size: 60px;
+      margin-top: 200px;
+      color: rgb(107, 7, 153);
+    "
+  >
+    <script>
+      let events = null;
+      window.addEventListener("mousemove", (event) => {
+        if (!events) {
+          setTimeout(() => {
+            document.body.textContent = `X-Axis: ${events.pageX} , Y-Axis: ${events.pageY}`;
+            events = null;
+          }, 10);
+        }
+        events = event;
+      });
+    </script>
+    <style>
+      script {
+        font-size: 40px;
+      }
+    </style>
+  </body>
+</html>

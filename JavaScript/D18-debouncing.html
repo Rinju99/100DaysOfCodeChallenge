@@ -1,30 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+    <title>RegEx Email Validator</title>
     <script>
-      var textfield;
-      var output;
-      var submit;
-
-      function setup() {
-        noCanvas;
-        textfield = Select("#input");
-        textfield.change(newText);
-        output = Select("#output");
-        submit = Select("#ouput");
-        submit.mousePressed(newText);
-      }
-
-      function newText() {
-        var s = textfield.value();
-        var r = /\W+@+\W+\.(net|com|org)/;
-        createP(r.test(s));
+      function validate() {
+        var mail = document.documentElementById("text").value();
+        var regx = /\W+@+\W+\.(net|com|org)/;
+        if (regx.test(mail)) {
+          alert("true");
+          return true;
+        } else {
+          alert("false");
+          return false;
+        }
       }
     </script>
+  </head>
+  <body>
+    <form>
+      <input id="text" placeholder="Email" type="text" /><br />
+      <button onclick="validate()" type="button">Submit</button>
+    </form>
   </body>
 </html>

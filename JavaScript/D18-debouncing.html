@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body
-    style="
-      font-weight: bold;
-      text-align: center;
-      font-size: 60px;
-      margin-top: 200px;
-      color: rgb(107, 7, 153);
-    "
-  >
+  <body>
     <script>
-      let events = null;
-      window.addEventListener("mousemove", (event) => {
-        if (!events) {
-          setTimeout(() => {
-            document.body.textContent = `X-Axis: ${events.pageX} , Y-Axis: ${events.pageY}`;
-            events = null;
-          }, 10);
-        }
-        events = event;
-      });
+      var textfield;
+      var output;
+      var submit;
+
+      function setup() {
+        noCanvas;
+        textfield = Select("#input");
+        textfield.change(newText);
+        output = Select("#output");
+        submit = Select("#ouput");
+        submit.mousePressed(newText);
+      }
+
+      function newText() {
+        var s = textfield.value();
+        var r = /\W+@+\W+\.(net|com|org)/;
+        createP(r.test(s));
+      }
     </script>
   </body>
 </html>

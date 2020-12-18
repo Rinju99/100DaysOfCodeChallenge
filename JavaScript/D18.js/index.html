@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RegEx Email Validator</title>
+  </head>
+  <body>
+    <h1>RegEx Validator</h1>
+    <form>
+      Email: <input type="text" name="Email" id="email" />
+      <input
+        type="submit"
+        name="submit"
+        value="submit"
+        onclick="return func()"
+      />
+    </form>
+  </body>
+</html>
+
+<script>
+  function func() {
+    var myEmail = document.documentElementById("email").value();
+    var pattern = /\W+@+\W+\.(net|com|org)/;
+    var result = pattern.test(myEmail);
+    if (result == true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+</script>

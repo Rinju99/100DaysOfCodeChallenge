@@ -13,7 +13,7 @@ var offset = 0;
 
 function draw() {
   for (var i = 0; i < sliders.length; i++) {
-    var n = map(sin(offset + i / 25), -1, 1, 0, 100);
+    var n = map(sin(offset + i / 30), -1, 1, 0, 100);
     sliders[i].value(n);
   }
   offset += 100000;

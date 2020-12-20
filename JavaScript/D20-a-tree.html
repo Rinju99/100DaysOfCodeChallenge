@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .wrapper {
+        transform: rotate(180deg);
+      }
+    </style>
+    <div class="wrapper">
+      <canvas width="900" height="300"></canvas>
+      <script>
+        let cx = document.querySelector("canvas").getContext("2d");
+        function branch(length, angle, scale) {
+          cx.fillRect(0, 0, 1, length - 1);
+          if (length < 6) return;
+          cx.save();
+          cx.translate(0, length);
+          cx.rotate(-angle);
+          branch(length * scale, angle, scale);
+          cx.rotate(2 * angle);
+          branch(length * scale, angle, scale);
+          cx.restore();
+        }
+        cx.translate(700, 0);
+        branch(60, 0.4, 0.8);
+      </script>
+    </div>
+  </body>
+</html>

@@ -19,6 +19,7 @@
       bar = document.querySelector("div");
       bar.addEventListener("mousedown", (event) => {
         if (event.button == 0) {
+          lastX = event.clientX;
           window.addEventListener("mousemove", moved);
         }
       });
@@ -27,8 +28,8 @@
           window.removeEventListener("mousemove", moved);
         } else {
           let dist = event.clientX - lastX;
-          let newWidth = Math.max(10, bar.offsetWidth + dist);
-          bar.style.width = newWidth + "px";
+          let width = Math.max(10, bar.offsetWidth + dist);
+          bar.style.width = width + "px";
           lastX = event.clientX;
         }
       }

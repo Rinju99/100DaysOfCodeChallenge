@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body style="text-align: center">
+    <h2>Drag the bar</h2>
+    <div
+      style="
+        background: rgb(8, 133, 8);
+        width: 160px;
+        height: 50px;
+        margin-left: 500px;
+      "
+    ></div>
+
+    <script>
+      let lastX; // Tracks the last observed mouse X positionlet
+      bar = document.querySelector("div");
+      bar.addEventListener("mousedown", (event) => {
+        if (event.button == 0) {
+          window.addEventListener("mousemove", moved);
+        }
+      });
+      function moved(event) {
+        if (event.buttons == 0) {
+          window.removeEventListener("mousemove", moved);
+        } else {
+          let dist = event.clientX - lastX;
+          let newWidth = Math.max(10, bar.offsetWidth + dist);
+          bar.style.width = newWidth + "px";
+          lastX = event.clientX;
+        }
+      }
+    </script>
+  </body>
+</html>

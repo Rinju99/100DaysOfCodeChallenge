@@ -17,7 +17,7 @@
         let cx = document.querySelector("canvas").getContext("2d");
         function branch(length, angle, scale) {
           cx.fillRect(0, 0, 1, length - 1);
-          if (length < 6) return;
+          if (length < 8) return;
           cx.save();
           cx.translate(0, length);
           cx.rotate(-angle);

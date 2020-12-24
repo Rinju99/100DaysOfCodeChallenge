@@ -1,3 +1,4 @@
+// I am not the original creator for most of the code,
 // Original Creator -> Daniel Shiffman
 
 function Vehicle(x, y, size) {

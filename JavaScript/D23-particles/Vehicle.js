@@ -1,7 +1,5 @@
-// Daniel Shiffman
-// http://codingtra.in
-// Steering Text Paths
-// Video: [coming soon]
+// I am not the original creator for most of the code,
+// Original Creator -> Daniel Shiffman
 
 function Vehicle(x, y, size) {
   this.pos = createVector(random(width), random(height));

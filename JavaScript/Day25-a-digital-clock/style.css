@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  background-color: #264653;
+}
+
+canvas {
+  display: block;
+}
+.content {
+  align-content: center;
+}

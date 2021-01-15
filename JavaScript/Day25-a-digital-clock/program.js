@@ -1,11 +1,11 @@
 function setup() {
   angleMode(DEGREES);
   img = loadImage("assets/image2.jpg");
-  createCanvas(500, 500);
+  createCanvas(window.innerWidth, window.innerHeight);
 }
 function draw() {
   background(img);
-  translate(200, 200);
+  translate(700, 280);
   rotate(-90);
 
   let hr = hour();

@@ -1,15 +1,8 @@
 // This statement is equivalent to import statement..
 var Twit = require("twit");
 var fs = require("fs");
-var OAuth = require("./authentication");
 
-var T = new Twit({
-  //Put Your authentication key below..
-  consumer_key: "...",
-  consumer_secret: "...",
-  access_token: "...",
-  access_token_secret: "...",
-});
+var T = new Twit({});
 
 // function MyBot(msg) {
 //   var tweet = {
@@ -49,21 +42,27 @@ var T = new Twit({
 // );
 
 // post a tweet with media...
-const fileName = "assets/trunks2.png";
-const content = fs.readFileSync(fileName, { encoding: "base64" });
-// first we must post the media to Twitter
-T.post("media/upload", { media_data: content }, tweeted);
-function tweeted(err, data, response) {
-  var id = data.media_id_string;
-  var params = {
-    status: "Trunksss!",
-    media_ids: [id],
-  };
-  T.post("statuses/update", params, function (err, data, response) {
-    if (err) {
-      console.log("something went wrong!");
-    } else {
-      console.log("successful!");
-    }
-  });
-}
+// const fileName = "assets/trunks2.png";
+// const content = fs.readFileSync(fileName, { encoding: "base64" });
+// // first we must post the media to Twitter
+// T.post("media/upload", { media_data: content }, tweeted);
+// function tweeted(err, data, response) {
+//   var id = data.media_id_string;
+//   var params = {
+//     status: "Trunksss!",
+//     media_ids: [id],
+//   };
+//   T.post("statuses/update", params, function (err, data, response) {
+//     if (err) {
+//       console.log("something went wrong!");
+//     } else {
+//       console.log("successful!");
+//     }
+//   });
+// }
+
+var stream = T.stream("statuses/filter", { track: "motivation" });
+
+stream.on("tweet", function (tweet) {
+  console.log(tweet);
+});

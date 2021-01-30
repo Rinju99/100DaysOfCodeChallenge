@@ -11,5 +11,3 @@ public class Streams {
 			.forEach(System.out::println);
   }
 }
-//Output: 
-//blue orange purple

@@ -1,17 +1,21 @@
+// Getting started with react hooks..
 import React, { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(4);
+  const [currentState, counter] = useState(0);
+
   function subtract() {
-    setCount((prevCount) => prevCount - 1);
+    counter((currentVal) => --currentVal);
   }
+
   function add() {
-    setCount((prevCount) => prevCount + 1);
+    counter((currentVal) => ++currentVal);
   }
+
   return (
     <>
       <button onClick={subtract}>-</button>
-      <span>{count}</span>
+      <span>{currentState}</span>
       <button onClick={add}>+</button>
     </>
   );

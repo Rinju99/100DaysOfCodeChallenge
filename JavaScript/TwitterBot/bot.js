@@ -2,7 +2,12 @@
 var Twit = require("twit");
 var fs = require("fs");
 
-var T = new Twit({});
+var T = new Twit({
+  onsumer_key =  "lHJtDfuIlCiuByV4mTBZRTq6k"
+consumer_secret= "FfmKY8FGSFz456DvzLMtOF72IDMek8OArp4hxTsXC9dDXHTsml"
+access_token= "1348145669748514817-CACneM5ygXx0tN77JlRxnYmBIhFL0W"
+access_token_secret= "phITLP6Q7dxSBlVSbKeljn8O2YUKzHMp9kBlTzjUY95ha"
+});
 
 // function MyBot(msg) {
 //   var tweet = {

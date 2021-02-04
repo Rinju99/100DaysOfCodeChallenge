@@ -13,11 +13,11 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <button onClick={subtract}>-</button>
       <span>{currentState}</span>
       <button onClick={add}>+</button>
-    </>
+    </div>
   );
 }
 

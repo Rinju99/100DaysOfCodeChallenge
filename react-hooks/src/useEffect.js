@@ -1,28 +1,19 @@
-// Getting started with react hooks..
 import React, { useState, useEffect } from "react";
 
-function WindowSizeList({ url }) {
+export default function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [items, setItems] = useState([]);
 
-  const updateWindowWidth = () => {
+  const updateWindowSize = () => {
     setWindowWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateWindowWidth);
+    window.addEventListener("resize", updateWindowSize);
+
     return () => {
-      window.removeEventListener("resize", updateWindowWidth);
+      window.removeEventListener("resize", updateWindowSize);
     };
   }, []);
 
-  return (
-    <>
-      <div>Window Width: {windowWidth}</div>
-      {items.map((item) => {
-        return <div key={item}>{item}</div>;
-      })}
-    </>
-  );
+  return <div>{windowWidth}</div>;
 }
-export default WindowSizeList;

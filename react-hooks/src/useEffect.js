@@ -14,6 +14,5 @@ export default function App() {
       window.removeEventListener("resize", updateWindowSize);
     };
   }, []);
-
   return <div>{windowWidth}</div>;
 }

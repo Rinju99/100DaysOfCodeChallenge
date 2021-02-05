@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./useEffect";
+import App from "./useMemo";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

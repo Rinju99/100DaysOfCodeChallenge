@@ -7,7 +7,7 @@ const reducer = (state, action) => {
     case "REMOVE":
       return { rabbit: state.rabbit - 1 };
     case "RESET":
-      return { dragon: 1 };
+      return { rabbit: 1 };
     default:
       return state;
   }

@@ -24,7 +24,7 @@ async function moodDetector() {
 
   const draw = faceapi.draw;
   draw.drawDetections(canvas, resize);
-  //draw.drawFaceLandmarks(canvas, resize);
+  draw.drawFaceLandmarks(canvas, resize);
   draw.drawFaceExpressions(canvas, resize);
 }
 moodDetector();

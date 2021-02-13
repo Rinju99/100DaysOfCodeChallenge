@@ -1,5 +1,4 @@
-const toArray = (str, ptrn = /[^a-zA-Z-]+/) 
-              => str.split(ptrn).filter(Boolean);
+const toArray = (str, nonChar = /[^a-zA-Z-]+/) => str.split(nonChar);
 
-console.log(toArray("Its a new day"));
 console.log(toArray("Keep Calm and Code"));
+// OUTPUT: ['Keep', 'Calm', 'and', 'Code']

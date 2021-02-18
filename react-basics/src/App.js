@@ -1,24 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "./Components/Button";
+
+const MainWrapper = styled.section`
+    width: 100%
+    max-width: 1200px;
+    margin: 0 auto;
+   
+`;
 function App() {
-  const Button = styled.button`
-    /* Adapt the colors based on primary prop */
-    background: ${(props) => (props.primary ? "palevioletred" : "white")};
-    color: ${(props) => (props.primary ? "white" : "palevioletred")};
-
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
-  `;
-
   return (
-    <div>
-      <Button>Normal</Button>
+    <MainWrapper>
       <Button primary>Primary</Button>
-    </div>
+      <Button>Primary</Button>
+    </MainWrapper>
   );
 }
-
 export default App;

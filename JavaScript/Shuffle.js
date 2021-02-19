@@ -3,6 +3,7 @@ const shuffle = (arr) => {
   let l = arr.length;
   while (l) {
     const i = Math.floor(Math.random() * l--);
+    console.log(i);
     [arr[l], arr[i]] = [arr[i], arr[l]];
   }
   return arr;

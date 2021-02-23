@@ -8,4 +8,5 @@ var obj2 = {
   topic: "obj comparision",
 };
 
-JSON.stringify(user1) === JSON.stringify(user2);
+JSON.stringify(obj1) === JSON.stringify(obj2);
+// True

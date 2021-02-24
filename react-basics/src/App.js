@@ -1,19 +1,28 @@
 import React from "react";
-import styled from "styled-components";
-import Button from "./Components/Button";
+import ReactDOM from "react-dom";
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
 
-const MainWrapper = styled.section`
-    width: 100%
-    max-width: 1200px;
-    margin: 0 auto;
-   
-`;
-function App() {
-  return (
-    <MainWrapper>
-      <Button primary>Primary</Button>
-      <Button>Primary</Button>
-    </MainWrapper>
-  );
+  tick() {
+    this.setState((state) => ({
+      seconds: state.seconds + 1,
+    }));
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return <div>Seconds: {this.state.seconds}</div>;
+  }
 }
-export default App;
+
+ReactDOM.render(<Timer />, document.getElementById("root"));

@@ -1,4 +1,4 @@
-// Count how many times an element is repeated..
+// Count how many times an element is repeated in an array..
 const countRepeatition = (arr, val) =>
   arr.reduce((i, v) => (v === val ? i + 1 : i), 0);
 

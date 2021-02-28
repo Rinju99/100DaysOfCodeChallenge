@@ -1,3 +1,5 @@
+package Java;
+
 class Solution {
   public ListNode reverseList(ListNode curr_node) {
       ListNode prev_node = null;

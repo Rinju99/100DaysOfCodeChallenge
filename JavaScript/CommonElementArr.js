@@ -1,3 +1,3 @@
-const similarity = (arr, values) => arr.filter((v) => values.includes(v));
-s = similarity([1, 2, 3], [1, 2, 4]); // [1, 2]
-console.log(s);
+const matching = (arr, val) => arr.filter((v) => val.includes(v));
+match = matching([1, 2, 3, 5, 7], [1, 2, 4, 7]);
+console.log(match); /// [ 1, 2, 7 ]

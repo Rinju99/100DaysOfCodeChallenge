@@ -1,7 +1,10 @@
+//function as a parameter that returns a closure..
 const spreadOver = (fn) => (args) => fn(...args);
 
+const arr = [1, 2, 3];
+
 const arrayMax = spreadOver(Math.max);
-console.log(arrayMax([1, 2, 3])); // 3
+arrayMax(arr); // 3
 
 const arrayMin = spreadOver(Math.min);
-console.log(arrayMin([1, 2, 3])); // 1
+arrayMin(arr); // 1

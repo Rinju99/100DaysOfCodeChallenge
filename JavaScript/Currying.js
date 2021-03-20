@@ -7,4 +7,4 @@ const multiply = function (x) {
   };
 };
 
-multiply(3)(5)(7); //output: 105
+multiply(1)(3)(5);

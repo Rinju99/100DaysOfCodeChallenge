@@ -8,5 +8,5 @@ function armstrongNum(num) {
   return sum === num;
 }
 
-console.log(armstrongNum(153));
-console.log(armstrongNum(1634));
+console.log(armstrongNum(153)); // true
+console.log(armstrongNum(1634)); // true

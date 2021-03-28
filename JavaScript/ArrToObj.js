@@ -1,6 +1,6 @@
 // convert array  -> object.
-let fruits = ["foo", "bar", "baz"];
-let fruitsObject = { ...fruits };
+let arr = ["foo", "bar", "baz"];
+let arrobj = { ...arr };
 
-console.log(fruitsObject);
+console.log(arrobj);
 // { '0': 'foo', '1': 'bar', '2': 'baz' }

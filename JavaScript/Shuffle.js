@@ -9,4 +9,4 @@ const shuffle = (arr) => {
   return arr;
 };
 const foo = [1, 2, 5, 9, 10, 15, 20];
-console.log(shuffle(foo));
+console.log(shuffle(foo)); // output: random shuffled elements

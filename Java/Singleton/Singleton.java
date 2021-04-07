@@ -1,7 +1,6 @@
 package Java.Singleton;
 
 public class Singleton {
-
   //Private Constructor
   private Singleton(){}
 
@@ -11,7 +10,6 @@ public class Singleton {
   //This method will return the instance we created
   public static Singleton getInstance(){
     return instance;
-
   }
 }
-// How create an object? :Singleton obj = Singleton.getInstance();
+//Singleton obj = Singleton.getInstance();

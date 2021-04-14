@@ -4,6 +4,8 @@ public class AdaptorDemo {
   public static void main(String[] args) {
 
     
+
+    
     
   }
   

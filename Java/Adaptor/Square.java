@@ -1,7 +1,7 @@
 package Java.Adaptor;
 
 public interface Square {
-  int sideLength();
+  void setSideLen(int n);
   int area();
   
 }

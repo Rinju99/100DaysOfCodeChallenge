@@ -1,8 +1,8 @@
 package Java.Adaptor;
 
 public interface Rectangle {
-  int len();
-  int width();
+  void setLen(int i);
+  void setWidth(int j);
   int area();
   
 }

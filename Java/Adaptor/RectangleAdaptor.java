@@ -9,9 +9,9 @@ public class RectangleAdaptor implements Square{
   }
 
   @Override
-  public void setSideLen(int i) {
-    rectangle.setLen(i);
-    rectangle.setWidth(i);
+  public void setSideLen(int side) {
+    rectangle.setLen(side);
+    rectangle.setWidth(side);
 
   }
   @Override

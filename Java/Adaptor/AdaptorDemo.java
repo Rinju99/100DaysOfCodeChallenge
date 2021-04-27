@@ -14,21 +14,5 @@ public class AdaptorDemo {
     // using square interface for rectangle object
     adaptor.setSideLen(5);
     System.out.println(adaptor.area());  //25
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-    
   }
-  
 }

@@ -10,7 +10,6 @@ public class AdaptorDemo {
     sq.setSideLen(5);
     System.out.println(sq.area());  // 25
 
-
     // using square interface for rectangle object
     adaptor.setSideLen(5);
     System.out.println(adaptor.area());  //25

@@ -1,0 +1,45 @@
+
+<!-- GRAMMAR -->
+<grammar mode="voice" version="1.0" root="command">
+  <rule id="command" scope="public">
+    <ruleref uri="#Phone"/> 
+  </rule>
+
+  <rule id="Phone">
+    <prompt>
+      Please say your 6 digit phone number.
+    </prompt>
+    <filled>
+      <if cond="phone_num.length != 6">
+        <prompt>
+          Sorry, I didn't hear exactly 6 digits.
+        </prompt>
+        <assign name="phone_num" expr="undefined"/>
+      <else/>
+        <prompt>I heard <say-as interpret-as="vxml:digits"> 
+          <value expr="phone_num"/></say-as>
+        </prompt>
+      </if>
+    </filled>
+  </rule>
+
+
+
+
+
+
+
+
+
+
+
+  <form >
+    <field name="phone">
+      <grammar type="application/srgs+xml" src="/phone_numbers.grxml"/>
+      <prompt> What is your home telephone number? </prompt>
+    </field>
+  </form>
+</vxml>
+
+
+

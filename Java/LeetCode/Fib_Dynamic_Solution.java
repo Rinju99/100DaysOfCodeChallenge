@@ -5,7 +5,7 @@ public class Fib_Dynamic_Solution {
     System.out.println(fib2(20));
   }
   //Recursive approach but not efficient - O(2^n)
-  public static int fib1(int n){
+  public static int fib(int n){
     if(n<2) return n;
     return fib(n-1)+fib(n-2);
   }
